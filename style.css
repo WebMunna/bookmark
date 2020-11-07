@@ -7,7 +7,7 @@ body{
 }
 
 .container{
-  width: 70%;
+  width: 90%;
   margin: auto;
   
 }
@@ -117,6 +117,9 @@ a{
   border-radius: 10px;
   margin-top: 10px;
   box-shadow: 5px 7px 20px  rgba(0, 0, 0, 0.5);
+}
+.url-name h1{
+  overflow-x: scroll;
 }
 
 .massage{
