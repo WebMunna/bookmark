@@ -53,9 +53,9 @@ class Storage{
 class UI{
 
   setLinkToVisit(url){
-  let urlReOne = /^(https:\/\/)((www).)([(a-zA-Z0-9)]+).([a-zA-Z0-9]{2,5})(\/)?$/;
-  let urlReTwo = /^((www).)([(a-zA-Z0-9)]+).([a-zA-Z0-9]{2,5})(\/)?$/;
-  let urlReThree = /^([(a-zA-Z0-9)]+).([a-zA-Z0-9]{2,5})(\/)?$/;
+  let urlReOne = /^(https:\/\/)((www).)?([(a-zA-Z0-9).]+)?([(a-zA-Z0-9)]+).([a-zA-Z0-9]{2,5})(\/)?([(a-zA-Z0-9)]+)?(\/)?([(a-zA-Z0-9)\/]+)?$/;
+  let urlReTwo = /^((www).)?([(a-zA-Z0-9).]+)?([(a-zA-Z0-9)]+).([a-zA-Z0-9]{2,5})(\/)?([(a-zA-Z0-9)]+)?(\/)?(\/)?([(a-zA-Z0-9)\/]+)?$/;
+  let urlReThree = /^([(a-zA-Z0-9).]+)?([(a-zA-Z0-9)]+).([a-zA-Z0-9]{2,5})(\/)?([(a-zA-Z0-9)]+)?(\/)?(\/)?([(a-zA-Z0-9)\/]+)?$/;
   let link;
   if(urlReOne.test(url)){
    console.log('this url is urlReOne')
@@ -65,7 +65,7 @@ class UI{
     return link = `https://${url}`
   } else if(urlReThree.test(url)){
     console.log('this url is urlReThree')
-    return link = `https://www.${url}`
+    return link = `https://${url}`
   }
   
   return link;
@@ -155,7 +155,7 @@ function submitEvent(e){
   console.log('submit event working')
   let nameInput = siteNameInput.value;
   let urlInput = siteUrlInput.value;
-  let urlRe = /^(https:\/\/)?((www).)?([(a-zA-Z0-9)]+)(\.)([a-zA-Z0-9]{2,5})(\/)?$/
+  let urlRe = /^(https:\/\/)?((www).)?([(a-zA-Z0-9).]+)?([(a-zA-Z0-9)]+)(\.)([a-zA-Z0-9]{2,5})(\/)?([(a-zA-Z0-9)]+)?(\/)?([(a-zA-Z0-9)\/]+)?$/
 
   if(!urlRe.test(urlInput)){
     console.log('not match')
